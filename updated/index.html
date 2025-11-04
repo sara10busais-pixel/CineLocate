@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine Locate</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <img src="IMG_8887.jpg" alt="Cine Locate Logo" class="logo" />
+    <h1 class="title">Cine Locate</h1>
+    <p class="subtitle">Find your next movie or TV show by Type, Genre, Decade, and Platform</p>
+  </header>
+
+  <main class="container">
+    <section class="filters">
+      <div class="filter">
+        <label for="typeSelect">Type</label>
+        <select id="typeSelect">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div class="filter">
+        <label for="genreSelect">Genre</label>
+        <select id="genreSelect">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div class="filter">
+        <label for="decadeSelect">Decade</label>
+        <select id="decadeSelect">
+          <option value="">Any</option>
+        </select>
+      </div>
+
+      <div class="filter">
+        <label for="platformSelect">Platform</label>
+        <select id="platformSelect">
+          <option value="">Any</option>
+          <option value="Netflix">Netflix</option>
+          <option value="Disney+">Disney+</option>
+          <option value="Hulu">Hulu</option>
+          <option value="Amazon Prime">Amazon Prime</option>
+        </select>
+      </div>
+
+      <button id="searchBtn" class="btn">Search</button>
+    </section>
+
+    <section id="results" class="results"></section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Cine Locate — All rights reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

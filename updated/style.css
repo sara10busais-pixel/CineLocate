@@ -1,0 +1,112 @@
+/* Cine Locate - Dark Red Cinematic Theme (updated) */
+:root{
+  --bg: #200508;
+  --panel: #2a0a0f;
+  --accent: #e50914;
+  --text: #ffffff;
+  --muted: #c6c6c6;
+  --border: #3a1016;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 50% -10%, #3d0c12 0%, var(--bg) 55%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  text-align: center;
+  padding: 24px 16px 8px;
+  background: linear-gradient(180deg, rgba(229,9,20,0.10), rgba(0,0,0,0));
+}
+
+.logo{
+  width: 140px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+}
+
+.title{ margin: 12px 0 4px; font-size: 32px; letter-spacing: 0.4px; }
+.subtitle{ margin: 0; color: var(--muted); font-size: 14px; }
+
+.container{ width: min(1100px, 94%); margin: 16px auto 40px; flex: 1; }
+
+.filters{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.filter{ display: flex; flex-direction: column; text-align: left; }
+label{ font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+
+select{
+  appearance: none;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+}
+select:focus{ border-color: var(--accent); }
+
+.btn{
+  grid-column: 1 / -1;
+  justify-self: start;
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-top: 4px;
+  transition: transform .08s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 28px rgba(229,9,20,0.35);
+}
+.btn:active{ transform: translateY(1px); }
+
+.results{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.card{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 160px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.card h3{ margin: 0; font-size: 18px; }
+.meta{ color: var(--muted); font-size: 13px; }
+.desc{ color: var(--text); font-size: 13px; line-height: 1.4; }
+
+.footer{ text-align: center; color: var(--muted); font-size: 12px; padding: 18px 12px 28px; border-top: 1px solid rgba(255,255,255,0.05); }
+
+@media (max-width: 640px){
+  .filters{ grid-template-columns: 1fr; }
+  .btn{ justify-self: stretch; }
+}
