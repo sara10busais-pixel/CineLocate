@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CineLocate</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <!-- PapaParse for safe CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
-  <header>
-    <img src="IMG_8887.jpg" alt="CineLocate Logo" class="logo">
-    <h1>CineLocate 🎬</h1>
+  <header class="header">
+    <img src="IMG_8887.jpg" alt="CineLocate Logo" class="logo" />
+    <h1 class="title">CineLocate</h1>
+    <p class="subtitle">Find movies & TV shows by Type, Genre, Decade, and Platform</p>
   </header>
 
-  <section class="search-section">
-    <input type="text" id="searchInput" placeholder="🔍 Search for a movie or TV show...">
-    <button onclick="searchTitle()">Search</button>
+  <!-- OPTIONAL helper: Search bar (does NOT replace filters) -->
+  <section class="search-helper">
+    <input id="searchInput" type="text" placeholder="🔎 Optional: type a title to see where it’s available (e.g., any movie/show)…">
+    <button id="searchBtn">Search</button>
+    <div id="searchResults" class="search-results"></div>
   </section>
 
-  <section class="filters">
-    <label>Type:</label>
-    <select id="typeFilter">
-      <option value="">All</option>
-      <option value="Movie">Movie</option>
-      <option value="TV Show">TV Show</option>
-    </select>
+  <!-- Main filters (original behavior) -->
+  <main class="container">
+    <section class="filters">
+      <div class="filter">
+        <label for="typeSelect">Type</label>
+        <select id="typeSelect"><option value="">Any</option></select>
+      </div>
+      <div class="filter">
+        <label for="genreSelect">Genre</label>
+        <select id="genreSelect"><option value="">Any</option></select>
+      </div>
+      <div class="filter">
+        <label for="decadeSelect">Decade</label>
+        <select id="decadeSelect"><option value="">Any</option></select>
+      </div>
+      <div class="filter">
+        <label for="platformSelect">Platform</label>
+        <select id="platformSelect">
+          <option value="">Any</option>
+          <option value="Netflix">Netflix</option>
+          <option value="Disney+">Disney+</option>
+          <option value="Hulu">Hulu</option>
+          <option value="Amazon Prime">Amazon Prime</option>
+        </select>
+      </div>
+      <button id="applyBtn" class="btn">Apply Filters</button>
+    </section>
 
-    <label>Genre:</label>
-    <select id="genreFilter"></select>
+    <!-- Main results (same as before) -->
+    <section id="results" class="results"></section>
+  </main>
 
-    <label>Decade:</label>
-    <select id="decadeFilter"></select>
-
-    <label>Platform:</label>
-    <select id="platformFilter">
-      <option value="">All</option>
-      <option value="Netflix">Netflix</option>
-      <option value="Hulu">Hulu</option>
-      <option value="Disney+">Disney+</option>
-      <option value="Prime Video">Prime Video</option>
-    </select>
-
-    <button onclick="filterData()">Filter</button>
-  </section>
-
-  <section id="results"></section>
+  <footer class="footer">
+    <p>© 2025 CineLocate</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
